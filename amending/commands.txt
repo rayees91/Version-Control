@@ -1,0 +1,87 @@
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/amending (main)
+$ git log -p
+commit cf4398b2990722d6be6b93ce114ef53cdafc1a50 (HEAD -> main)
+Author: rayees <rayees.ahmed@zemosolabs.com>
+Date:   Tue Jan 11 15:35:43 2022 +0530
+
+    adding cleaning
+
+diff --git a/cleaning/a.c b/cleaning/a.c
+new file mode 100644
+index 0000000..efca996
+--- /dev/null
++++ b/cleaning/a.c
+@@ -0,0 +1 @@
++import
+\ No newline at end of file
+diff --git a/cleaning/commands.txt b/cleaning/commands.txt
+new file mode 100644
+index 0000000..fa8209e
+--- /dev/null
++++ b/cleaning/commands.txt
+@@ -0,0 +1,35 @@
++ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
++$ ls -R
++.:
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/amending (main)
+$ git touch bar.txt
+git: 'touch' is not a git command. See 'git --help'.
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/amending (main)
+$ touch bar.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/amending (main)
+$ git add .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/amending (main)
+$ git commit --amend
+[main 3e531c5] adding cleaning
+ Date: Tue Jan 11 15:35:43 2022 +0530
+ 5 files changed, 39 insertions(+)
+ create mode 100644 amending/bar.txt
+ create mode 100644 cleaning/a.c
+ create mode 100644 cleaning/commands.txt
+ create mode 100644 cleaning/ray.txt
+ create mode 100644 cleaning/src/mylib.c
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/amending (main)
+$ git log -p
+commit 3e531c5132214f263b0c352f0c10975be1107390 (HEAD -> main)
+Author: rayees <rayees.ahmed@zemosolabs.com>
+Date:   Tue Jan 11 15:35:43 2022 +0530
+
+    adding cleaning
+
+diff --git a/amending/bar.txt b/amending/bar.txt
+new file mode 100644
+index 0000000..d28d40b
+--- /dev/null
++++ b/amending/bar.txt
+@@ -0,0 +1 @@
++add
+\ No newline at end of file
+diff --git a/cleaning/a.c b/cleaning/a.c
+new file mode 100644
+index 0000000..efca996
+--- /dev/null
++++ b/cleaning/a.c
+@@ -0,0 +1 @@
++import
+\ No newline at end of file
+diff --git a/cleaning/commands.txt b/cleaning/commands.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/amending (main)
+$ ls
+bar.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/amending (main)
+$ git commit --amend
+[main 1e2bfb9] adding cleaning
+ Date: Tue Jan 11 15:35:43 2022 +0530
+ 5 files changed, 39 insertions(+)
+ create mode 100644 amending/bar.txt
+ create mode 100644 cleaning/a.c
+ create mode 100644 cleaning/commands.txt
+ create mode 100644 cleaning/ray.txt
+ create mode 100644 cleaning/src/mylib.c
