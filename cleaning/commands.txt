@@ -1,0 +1,35 @@
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
+$ ls -R
+.:
+ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
+$ touch a.c
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
+$ cd src
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning/src (main)
+$ touch mylib.c
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning/src (main)
+$ cd ..
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
+$ git clean -n
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
+$ ls
+a.c  ray.txt  src/
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
+$ git add src/mylib.c .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
+$ git clean -n
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
+$ git clean -n -d
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/cleaning (main)
+$ git clean -f -d
