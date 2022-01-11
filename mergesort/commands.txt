@@ -1,0 +1,148 @@
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git branch
+* main
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git branch mergesort-impl
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git branch
+* main
+  mergesort-impl
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ touch ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git switch mergesort-impl
+Switched to branch 'mergesort-impl'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ touch ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ ls
+ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ ls
+ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ git switch main
+Switched to branch 'main'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git branch
+* main
+  mergesort-impl
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ touch echo "rayees">>ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ echo "rayees">>ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git switch mergesort-impl
+Switched to branch 'mergesort-impl'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ touch ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ echo "ahmed">>ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ ls
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ touch ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ echo "ahmed">>ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ git add .
+warning: LF will be replaced by CRLF in mergesort/ray.txt.
+The file will have its original line endings in your working directory
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ git commit -m "ahm"
+[mergesort-impl 02c0ed1] ahm
+ 1 file changed, 1 insertion(+)
+ create mode 100644 mergesort/ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (mergesort-impl)
+$ git switch main
+Deletion of directory 'mergesort' failed. Should I try again? (y/n) n
+Switched to branch 'main'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ ls
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ touch ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ echo "rayees">>ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git add .
+warning: LF will be replaced by CRLF in mergesort/ray.txt.
+The file will have its original line endings in your working directory
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git add .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git commit -m "ray"
+[main dee86c7] ray
+ 1 file changed, 1 insertion(+)
+ create mode 100644 mergesort/ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git merge mergesort-impl
+Auto-merging mergesort/ray.txt
+CONFLICT (add/add): Merge conflict in mergesort/ray.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main|MERGING)
+$ git status
+On branch main
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      ray.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main|MERGING)
+$ git add ray.txt .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main|MERGING)
+$ git status
+On branch main
+All conflicts fixed but you are still merging.
+  (use "git commit" to conclude merge)
+
+Changes to be committed:
+        modified:   ray.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main|MERGING)
+$ git commit -m "resolved"
+[main d775365] resolved
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git mergetool --tool=emerge
+No files need merging
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergesort (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
