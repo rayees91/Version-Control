@@ -1,0 +1,147 @@
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git log --decorate --oneline
+c21c2bf (HEAD -> main, origin/main) adding rebase
+90bc175 (mergesort-impl) adding mergesort
+d775365 resolved
+dee86c7 ray
+02c0ed1 ahm
+ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git branch
+* main
+  mergesort-impl
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ cat greeting.txt
+cat: greeting.txt: No such file or directory
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ touch greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ cat
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ cat greeting.txt
+rayees
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add a Signed-off-by trailer
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git add .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git commit -m "check"
+[main 6a012ff] check
+ 1 file changed, 1 insertion(+)
+ create mode 100644 revert/greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git revert "check"
+fatal: bad revision 'check'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git revert 6a012ff
+Deletion of directory 'revert' failed. Should I try again? (y/n) y
+Deletion of directory 'revert' failed. Should I try again? (y/n) n
+[main b7f8e2c] Revert "check"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 revert/greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git log --decorate --oneline
+b7f8e2c (HEAD -> main) Revert "check"
+6a012ff check
+c21c2bf (origin/main) adding rebase
+90bc175 (mergesort-impl) adding mergesort
+d775365 resolved
+dee86c7 ray
+02c0ed1 ahm
+ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ cat greeting.txt
+cat: greeting.txt: No such file or directory
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ ls
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git log --decorate --oneline
+b7f8e2c (HEAD -> main) Revert "check"
+6a012ff check
+c21c2bf (origin/main) adding rebase
+90bc175 (mergesort-impl) adding mergesort
+d775365 resolved
+dee86c7 ray
+02c0ed1 ahm
+ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git revert b7f8e2c
+[main 5be8089] Revert "Revert "check""
+ 1 file changed, 1 insertion(+)
+ create mode 100644 revert/greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ ls
+greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git log --decorate --oneline
+5be8089 (HEAD -> main) Revert "Revert "check""
+b7f8e2c Revert "check"
+6a012ff check
+c21c2bf (origin/main) adding rebase
+90bc175 (mergesort-impl) adding mergesort
+d775365 resolved
+dee86c7 ray
+02c0ed1 ahm
+ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git show b7f8e2c
+commit b7f8e2ca0df467059922ceb7b8b1b0bedf47f7ad
+Author: rayees <rayees.ahmed@zemosolabs.com>
+Date:   Tue Jan 11 14:55:26 2022 +0530
+
+    Revert "check"
+
+    This reverts commit 6a012ff52fbcbc2b3b0afba0935c742e39b5c275.
+
+diff --git a/revert/greeting.txt b/revert/greeting.txt
+deleted file mode 100644
+index ff3cad2..0000000
+--- a/revert/greeting.txt
++++ /dev/null
+@@ -1 +0,0 @@
+-rayees
+\ No newline at end of file
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/revert (main)
+$ git status
+On branch main
+nothing to commit, working tree clean
