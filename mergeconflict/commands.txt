@@ -1,0 +1,107 @@
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main)
+$ touch ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main)
+$ git branch
+  greeting
+  login
+* main
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main)
+$ git branch new
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main)
+$ git switch new
+Switched to branch 'new'
+M       Basic branching
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (new)
+$ touch ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (new)
+$ git switch main
+Switched to branch 'main'
+M       Basic branching
+Your branch is up to date with 'orig/main'.
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main)
+$ git add .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main)
+$ dit commit -m "upl"
+bash: dit: command not found
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main)
+$ git commit -m "upl"
+[main e6a8f13] upl
+ 1 file changed, 1 insertion(+)
+ create mode 100644 mergeconflict/ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main)
+$ git switch new
+Deletion of directory 'mergeconflict' failed. Should I try again? (y/n) n
+Switched to branch 'new'
+M       Basic branching
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (new)
+$ touch ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (new)
+$ echo "rayees" >> ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (new)
+$ git add .
+warning: LF will be replaced by CRLF in mergeconflict/ray.txt.
+The file will have its original line endings in your working directory
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (new)
+$ git commit -m "upload"
+[new 5aba5d6] upload
+ 1 file changed, 1 insertion(+)
+ create mode 100644 mergeconflict/ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (new)
+$ git switch main
+Switched to branch 'main'
+M       Basic branching
+Your branch is ahead of 'orig/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main)
+$ git merge new
+Auto-merging mergeconflict/ray.txt
+CONFLICT (add/add): Merge conflict in mergeconflict/ray.txt
+Automatic merge failed; fix conflicts and then commit the result.
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main|MERGING)
+$ git status
+On branch main
+Your branch is ahead of 'orig/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both added:      ray.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   ../Basic branching (new commits)
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main|MERGING)
+$ cat ray.txt
+<<<<<<< HEAD
+abc
+=======
+rayees
+>>>>>>> new
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/mergeconflict (main|MERGING)
+$

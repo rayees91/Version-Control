@@ -1,0 +1,128 @@
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ Git branch
+* main
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ git branch mybranch
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ git branch
+* main
+  mybranch
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ ls
+ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ add ray.txt
+bash: add: command not found
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git add ray.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git commit -m "updated"
+On branch mybranch
+nothing to commit, working tree clean
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git add .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git commit -m "updated"
+On branch mybranch
+nothing to commit, working tree clean
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git log --online --graph
+fatal: unrecognized argument: --online
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ touch ahm.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git add .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git commit -m "upl"
+[mybranch c886c95] upl
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 ahm.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git log --online --graph
+fatal: unrecognized argument: --online
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git log --oneline --graph
+* c886c95 (HEAD -> mybranch) upl
+* 12906b0 (main) upl
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git switch mybranch
+Already on 'mybranch'
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git switch main
+Switched to branch 'main'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ git log --oneline --graph
+* 12906b0 (HEAD -> main) upl
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git switch main
+Switched to branch 'main'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ ls
+ray.txt  taj.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ git log --oneline --graph --all
+* c886c95 (mybranch) upl
+* 12906b0 (HEAD -> main) upl
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git switch main
+Switched to branch 'main'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (main)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git diff mybranch main
+diff --git a/ahm.txt b/ahm.txt
+deleted file mode 100644
+index e69de29..0000000
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Basic branching (mybranch)
+$ git switch main
+Switched to branch 'main'

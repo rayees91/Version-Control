@@ -1,0 +1,131 @@
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (master)
+$ git branch
+  login
+* master
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (master)
+$ Git branch -m master main
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git branch
+  login
+* main
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git branch feature/uppercase
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git branch
+  feature/uppercase
+  login
+* main
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git switch feature/uppercase
+Switched to branch 'feature/uppercase'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (feature/uppercase)
+$ ls
+greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (feature/uppercase)
+$ git add.
+git: 'add.' is not a git command. See 'git --help'.
+
+The most similar command is
+        add
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (feature/uppercase)
+$ git add .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (feature/uppercase)
+$ git commit -m "rayees"
+[feature/uppercase 9c29165] rayees
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Fastmerge/greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (feature/uppercase)
+$ git branch
+* feature/uppercase
+  login
+  main
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (feature/uppercase)
+$ git log --online --graph --all
+fatal: unrecognized argument: --online
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (feature/uppercase)
+$ git log --oneline --graph --all
+* 9c29165 (HEAD -> feature/uppercase) rayees
+* 3797b9e (origin/master, main) added commands
+* 1133c96 updated
+| * 05d4ca2 (login) upd
+|/
+* 4009f37 rayees
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (feature/uppercase)
+$ git switch main
+Deletion of directory 'Fastmerge' failed. Should I try again? (y/n) n
+Switched to branch 'main'
+Your branch is up to date with 'origin/master'.
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ cat
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ cat greeting.txt
+cat: greeting.txt: No such file or directory
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git status
+On branch main
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ../Basic branching/
+        ../basic staging/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git log --oneline --graph --all
+* 9c29165 (feature/uppercase) rayees
+* 3797b9e (HEAD -> main, origin/master) added commands
+* 1133c96 updated
+| * 05d4ca2 (login) upd
+|/
+* 4009f37 rayees
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git diff main feature/uppercase
+diff --git a/Fastmerge/greeting.txt b/Fastmerge/greeting.txt
+new file mode 100644
+index 0000000..b9647da
+--- /dev/null
++++ b/Fastmerge/greeting.txt
+@@ -0,0 +1 @@
++GREETING
+\ No newline at end of file
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git merge feature/uppercase
+Updating 3797b9e..9c29165
+Fast-forward
+ Fastmerge/greeting.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Fastmerge/greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ cat greeting.txt
+GREETING
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git branch -d feature/uppercase
+Deleted branch feature/uppercase (was 9c29165).
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/Fastmerge (main)
+$ git branch
+  login
+* main

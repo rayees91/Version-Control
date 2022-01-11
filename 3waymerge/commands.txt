@@ -1,0 +1,105 @@
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git branch
+  login
+* main
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git branch greeting
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git branch
+  greeting
+  login
+* main
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git switch greeting
+Switched to branch 'greeting'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (greeting)
+$ touch greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (greeting)
+$ git add .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (greeting)
+$ git commit -m "upd"
+[greeting 471cd51] upd
+ 1 file changed, 1 insertion(+)
+ create mode 100644 3waymerge/greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (greeting)
+$ git switch main
+Deletion of directory '3waymerge' failed. Should I try again? (y/n) n
+Switched to branch 'main'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ touch README.md
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git add .
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git commit -m "updat"
+[main 0e38b73] updat
+ 1 file changed, 1 insertion(+)
+ create mode 100644 3waymerge/README.md
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git log --online --graph --all
+fatal: unrecognized argument: --online
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git log --oneline --graph --all
+* 0e38b73 (HEAD -> main) updat
+| * 471cd51 (greeting) upd
+|/
+* 9c29165 rayees
+* 3797b9e (origin/master) added commands
+* 1133c96 updated
+| * 05d4ca2 (login) upd
+|/
+* 4009f37 rayees
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git diff main greeting
+diff --git a/3waymerge/README.md b/3waymerge/README.md
+deleted file mode 100644
+index 8a0f99f..0000000
+--- a/3waymerge/README.md
++++ /dev/null
+@@ -1 +0,0 @@
+-Thisis 3 way merge dir
+\ No newline at end of file
+diff --git a/3waymerge/greeting.txt b/3waymerge/greeting.txt
+new file mode 100644
+index 0000000..ff3cad2
+--- /dev/null
++++ b/3waymerge/greeting.txt
+@@ -0,0 +1 @@
++rayees
+\ No newline at end of file
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git merge greeting
+Merge made by the 'ort' strategy.
+ 3waymerge/greeting.txt | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 3waymerge/greeting.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/3waymerge (main)
+$ git log --oneline --graph --all
+*   9baf9c9 (HEAD -> main) Merge branch 'greeting'
+|\
+| * 471cd51 (greeting) upd
+* | 0e38b73 updat
+|/
+* 9c29165 rayees
+* 3797b9e (origin/master) added commands
+* 1133c96 updated
+| * 05d4ca2 (login) upd
+|/
+* 4009f37 rayees

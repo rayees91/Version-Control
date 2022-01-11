@@ -1,0 +1,270 @@
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git init
+Initialized empty Git repository in C:/Users/ACER/Desktop/zemoso/basic staging/.git/
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ ls
+commands.txt  rayees.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ echo 2 >rayees.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git diff
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git diff --staged
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git add rayees.txt
+warning: LF will be replaced by CRLF in rayees.txt.
+The file will have its original line endings in your working directory
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git diff
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git diff --staged
+diff --git a/rayees.txt b/rayees.txt
+new file mode 100644
+index 0000000..0cfbf08
+--- /dev/null
++++ b/rayees.txt
+@@ -0,0 +1 @@
++2
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ echo 3 >rayees.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git diff
+warning: LF will be replaced by CRLF in rayees.txt.
+The file will have its original line endings in your working directory
+diff --git a/rayees.txt b/rayees.txt
+index 0cfbf08..00750ed 100644
+--- a/rayees.txt
++++ b/rayees.txt
+@@ -1 +1 @@
+-2
++3
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git diff --staged
+diff --git a/rayees.txt b/rayees.txt
+new file mode 100644
+index 0000000..0cfbf08
+--- /dev/null
++++ b/rayees.txt
+@@ -0,0 +1 @@
++2
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   rayees.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   rayees.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        commands.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git restore --staged rayees.txt
+fatal: could not resolve HEAD
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   rayees.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   rayees.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        commands.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git restore --staged rayees.txtgit restore --staged rayees.txt
+fatal: could not resolve HEAD
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git restore --staged rayees.txt
+fatal: could not resolve HEAD
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ echo 4 >rayees.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git diff
+warning: LF will be replaced by CRLF in rayees.txt.
+The file will have its original line endings in your working directory
+diff --git a/rayees.txt b/rayees.txt
+index 0cfbf08..b8626c4 100644
+--- a/rayees.txt
++++ b/rayees.txt
+@@ -1 +1 @@
+-2
++4
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git diff --staged
+diff --git a/rayees.txt b/rayees.txt
+new file mode 100644
+index 0000000..0cfbf08
+--- /dev/null
++++ b/rayees.txt
+@@ -0,0 +1 @@
++2
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git statu
+git: 'statu' is not a git command. See 'git --help'.
+
+The most similar commands are
+        status
+        stage
+        stash
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   rayees.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   rayees.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        commands.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   rayees.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   rayees.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git restore --staged rayees.txt
+fatal: could not resolve HEAD
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ ^C
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   rayees.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   rayees.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git restore rayees.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   rayees.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ echo 4>rayees.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ echo 4 >rayees.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   rayees.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   rayees.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git restore rayees.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git restore
+fatal: you must specify path(s) to restore
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git restore
+fatal: you must specify path(s) to restore
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   rayees.txt
+
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/basic staging (master)
+$ git commit -m "ray"
+[master (root-commit) 93bc266] ray
+ 1 file changed, 1 insertion(+)
+ create mode 100644 rayees.txt
