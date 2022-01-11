@@ -1,0 +1,57 @@
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (main)
+$ git branch
+* main
+  mergesort-impl
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (main)
+$ git log --oneline --graph --all
+* 90bc175 (HEAD -> main, origin/main) adding mergesort
+*   d775365 resolved
+|\
+| * 02c0ed1 (mergesort-impl) ahm
+* | dee86c7 ray
+|/
+* ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (main)
+$ git branch mergesort-impl
+fatal: A branch named 'mergesort-impl' already exists.
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (main)
+$ git switch mergesort-impl
+Switched to branch 'mergesort-impl'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (mergesort-impl)
+$ git log --oneline --graph --all
+* 90bc175 (origin/main, main) adding mergesort
+*   d775365 resolved
+|\
+| * 02c0ed1 (HEAD -> mergesort-impl) ahm
+* | dee86c7 ray
+|/
+* ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (mergesort-impl)
+$ git rebase main
+Successfully rebased and updated refs/heads/mergesort-impl.
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (mergesort-impl)
+$ git switch main
+Switched to branch 'main'
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (main)
+$ git merge mergesort-impl
+Already up to date.
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (main)
+$ git log --oneline --graph --all
+* 90bc175 (HEAD -> main, origin/main, mergesort-impl) adding mergesort
+*   d775365 resolved
+|\
+| * 02c0ed1 ahm
+* | dee86c7 ray
+|/
+* ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/rebase (main)
