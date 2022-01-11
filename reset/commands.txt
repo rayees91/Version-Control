@@ -1,0 +1,82 @@
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ ls
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git log --decorate --oneline
+001efff (HEAD -> main, origin/main) adding commands
+5be8089 Revert "Revert "check""
+b7f8e2c Revert "check"
+6a012ff check
+c21c2bf adding rebase
+90bc175 (mergesort-impl) adding mergesort
+d775365 resolved
+dee86c7 ray
+02c0ed1 ahm
+ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git reset --soft HEAD~1
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git log --decorate --oneline
+5be8089 (HEAD -> main) Revert "Revert "check""
+b7f8e2c Revert "check"
+6a012ff check
+c21c2bf adding rebase
+90bc175 (mergesort-impl) adding mergesort
+d775365 resolved
+dee86c7 ray
+02c0ed1 ahm
+ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git reset --mixed HEAD~1
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git log --decorate --oneline
+b7f8e2c (HEAD -> main) Revert "check"
+6a012ff check
+c21c2bf adding rebase
+90bc175 (mergesort-impl) adding mergesort
+d775365 resolved
+dee86c7 ray
+02c0ed1 ahm
+ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git reset --hard HEAD~1
+HEAD is now at 6a012ff check
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git log --decorate --oneline
+6a012ff (HEAD -> main) check
+c21c2bf adding rebase
+90bc175 (mergesort-impl) adding mergesort
+d775365 resolved
+dee86c7 ray
+02c0ed1 ahm
+ded349e upload
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git revert HEAD~1
+[main 38228e3] Revert "adding rebase"
+ 1 file changed, 57 deletions(-)
+ delete mode 100644 rebase/commands.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git commit --amend
+[main 522a6b0] Revert "adding rebase"
+ Date: Tue Jan 11 15:16:16 2022 +0530
+ 1 file changed, 57 deletions(-)
+ delete mode 100644 rebase/commands.txt
+
+ACER@LAPTOP-S2I6GQQ7 MINGW64 ~/Desktop/zemoso/reset (main)
+$ git log --decorate --oneline
+522a6b0 (HEAD -> main) Revert "adding rebase"
+6a012ff check
+c21c2bf adding rebase
+90bc175 (mergesort-impl) adding mergesort
+d775365 resolved
+dee86c7 ray
+02c0ed1 ahm
+ded349e upload
